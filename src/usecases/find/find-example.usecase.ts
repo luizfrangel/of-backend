@@ -1,5 +1,5 @@
 import { ResourceNotFoundError } from "@/errors/resource-not-found.error";
-import { ExampleRepositoryInterface } from "@/repositories/example-repository.interface";
+import { ExamplesRepositoryInterface } from "@/repositories/examples-repository.interface";
 
 interface FindExampleUseCaseInput {
   id: string
@@ -7,7 +7,7 @@ interface FindExampleUseCaseInput {
 
 
 class FindExampleUseCase {
-  constructor(private exampleRepository: ExampleRepositoryInterface) {}
+  constructor(private exampleRepository: ExamplesRepositoryInterface) {}
   public async execute({ id }: FindExampleUseCaseInput): Promise<string> {
     const example = await this.exampleRepository.findById(id)
 
